@@ -1,3 +1,4 @@
+import { CssBaseline } from "@mui/material";
 import React from "react";
 import {
   BrowserRouter as Router,
@@ -5,6 +6,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import HeaderPage from "./Components/Header";
 import DetailPage from "./Pages/DetailPage/DetailPage";
 import Home from "./Pages/Home/Home";
 import Pokedex from "./Pages/Pokedex/Pokedex";
@@ -12,23 +14,9 @@ import Pokedex from "./Pages/Pokedex/Pokedex";
 export default function App() {
   return (
     <Router>
+      <CssBaseline/>
       <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/Pokedex">Pokedex</Link>
-            </li>
-            <li>
-              <Link to="/detail">DetailPage</Link>
-            </li>
-          </ul>
-        </nav>
-
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
+        <HeaderPage/>
         <Switch>
           <Route path="/detail">
             <DetailPage />
